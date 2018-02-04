@@ -1,0 +1,22 @@
+{
+  "name"                    : "YouTube auto close on video end",
+  "short_name"              : "YouTube auto close",
+  "version"                 : "1.0",
+  "description"             : "When a YouTube video ends, after a certain amount of time the tab will close on it's own. Save time and resources by never forgetting to close tabs with finished videos.",
+  "manifest_version"        : 2,
+  "author"                  : "Sela Oren",
+  "content_scripts"         : [{ 
+                                "matches" : ["*://*.youtube.com/*", "*://youtube.com/*"], 
+                                "js": ["timer.js"], 
+                                "match_about_blank": false,
+                                "run_at" : "document_end"
+                              }],
+  "background": {
+                             "scripts": ["back.js"]
+  }
+  //"permissions"             : [   ]
+
+  //"options_page": "options.html"
+}
+
+//"tabs" "notifications" "http://*/*" "*://*.youtube.com/*", "*://youtube.com/*"
